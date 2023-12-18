@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100;1,200&family=VT323&family=Work+Sans:ital,wght@1,200&display=swap');
+      body {
+         font-family: 'Work Sans', sans-serif;
+         text-align: justify;
+      }
+        h1 {
+            text-decoration: underline;
+            text-align: center;
+            margin-top: 300px;
+            font-size: {{ font_size }}px;
+         }
+
+         h2 {
+            font-size: 20px;
+            margin-top: 10px;
+            text-decoration: underline;
+            font-size: {{ subtitle_font_size }}px;
+         } 
+         p {
+            font-size: {{ paragraph_font_size  }}px;
+         }
+     </style>
+</head>
+<body>
+      <h1>{{titre}}</h1>
+      <br>
+      <h2>Résumé :</h2>
+      <p> {{resume}}</p>
+      <h2>La demande :</h2>
+      <p>{{objet_du_litige|replace('\n', '<br>')|safe}}</p>
+      <h2>La solution :</h2>
+      <p>{{sens_de_la_decision|replace('\n', '<br>')|safe}}</p>
+      <h2>Les raisons :</h2>
+      <p>{{motif_de_la_decision|replace('\n', '<br>')|safe}}</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p style="font-style: italic;font-weight: bold;">&laquo; Cette explication ne remplace pas la consultation de la décision de justice originale qui seule fait foi &raquo;. </p>
+</body>
+</html>

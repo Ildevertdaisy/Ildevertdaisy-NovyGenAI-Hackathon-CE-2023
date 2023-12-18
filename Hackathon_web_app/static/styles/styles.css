@@ -1,0 +1,164 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100;1,200&family=Roboto:wght@300&family=VT323&family=Work+Sans:ital,wght@1,200&display=swap');
+
+*, *::before ,*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;      
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* div.options > button.disabled-btn {
+    background-color: lightgrey;
+    color: black;
+} */
+
+/* div.options > button:hover {
+    background-color: black;
+    font-weight: bold;
+    cursor: pointer;
+} */
+
+
+
+div.input-section {
+    /*display: none;*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 4em;
+    margin-top: 6em;
+}
+
+div.input-section > textarea {
+    width: 64%;
+    height: 40vh;
+    padding: 1.2em;
+    border: 2px solid lightgray;
+    border-radius: 1em;
+    outline: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+
+h3 {
+    padding-left: 2.4em;
+    font-size: 1.6rem;
+}
+
+
+div.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+
+div.input-section > div.buttons-container > button {
+    display: block;
+    margin-top: 0.6em;
+    padding: 1.2em;
+    border: none;
+    background-color: rgb(31, 29, 29);
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+
+div.input-section > label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 0.2em;
+}
+
+
+div.output-section {
+    /* background-color: blueviolet; */
+    padding: 0.4em;
+    padding-left: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+    /* display: none; */
+}
+
+
+div.form-select {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.output-section div.form-select > label {
+    font-weight: bold;
+    padding: 0.8em;
+}
+
+div.output-section div.form-select > select {
+    margin-bottom: 2em;
+    padding: 0.8em;
+    width: 50%;
+    background-color: transparent;
+    border-radius: 0.4em;
+    outline: none;
+    border: 1px solid lightgrey;
+}
+
+
+#pdf-container {
+    margin-top: 2em;
+}
+
+
+/* Logic about spinner */
+div.loading-section  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.loading-section > div.image-container  {
+   width: 200px;
+   height: 200px;
+   margin-top: 2em;
+}
+
+div.loading-section > div.image-container  > img {
+    width: 70%;
+    height: 70%;
+}
+
+div.error-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4em;
+}
+
+
+label.persona {
+    padding-left: 12em;
+}
+
+video {
+    width: 900px;;
+}

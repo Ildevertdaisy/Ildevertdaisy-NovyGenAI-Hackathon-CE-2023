@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/styles.css') }}">
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="output-section">
+        <div class="form-select">
+            <label>Décision:</label>
+             <select name="name" id="decision_select">
+               <option value="Decision01">Decision 01</option>
+               <option value="Decision02">Decision 02</option>
+               <option value="Decision03">Decision 03</option>
+          </select>
+        </div><br>
+        <div class="form-select">
+        <label>Persona:</label>
+        <select name="persona" id="persona-select" hx-get="/data/{{name}}" hx-trigger="change" hx-target="#container">
+            <option value="Anna">Anna</option>
+            <option value="Hugo">Hugo</option>
+             <option value="Patrice">Patrice</option>
+            </select>
+        </div>
+            <audio id="audioPlayer" src="{{url_for('static', filename=default_audio_url)}}" controls >
+                <a href="{{url_for('static', filename=default_audio_url)}}">
+                   Télécharger l'audio
+                </a>
+            </audio>
+            <!-- PDF Reader -->
+              <object 
+              data="{{url_for('static', filename=default_pdf_url)}}"
+              type="application/pdf"
+              width="900"
+              height="678"
+              id  = "pdf-container"
+              >
+                <iframe 
+                  src="{{url_for('static', filename=default_pdf_url)}}" 
+                   width="900"
+                   height="678"
+                   >
+                   <p>This browser does not support PDF!</p>
+                </iframe>
+              </object><br><br>
+              <!-- Lecteur vidéo -->
+            <video id="videoPlayer" width="640" height="360" controls>
+                <source id="videoSource" src="{{url_for('static', filename=video_url)}}" type="video/mp4">
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+        </div>
+    </div>
+    <script>
+        document.getElementById('decision_select').addEventListener('change', function() {
+            var selectedValue = this.value;
+            window.location.href = `?name=${selectedValue}`;
+        });
+
+
+        // Audio player
+
+
+    </script>
+</body>
+</html>
